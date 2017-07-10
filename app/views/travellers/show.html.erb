@@ -1,0 +1,11 @@
+<% @destinations.each do |destination| %>
+  <h2>
+  <%= destination.name %>
+</h2>
+  <% destination.to_do_items.all.each do |item| %>
+  <h3>
+    <%= item.activity %>
+  </h3>
+  <% end %>
+
+<% end %>
