@@ -4,7 +4,7 @@ Given(/^there are some destinations$/) do
 end
 
 Given(/^they are registered$/) do
-  @traveller = Traveller.create!(:name => "Jon McDonald")
+  @traveller = Traveller.create!(:name => "Jon McDonald", :email => 'jon@example.com', :password => 'password')
 end
 
 Given(/^they are signed in$/) do
@@ -16,7 +16,7 @@ When(/^they are on the add traveller destination page$/) do
 end
 
 When(/^they choose a destination$/) do
-  save_and_open_page
+  #save_and_open_page
   select @destination.name, :from => 'traveller_destination[id]'
   click_on 'Add'
 end
