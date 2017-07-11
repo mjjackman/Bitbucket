@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
-  resource :destination, :only => [:show] do
-    resource :todoitem, :only => [:new]
+  resources :destinations, :only => [:show] do
+    resources :to_do_items
   end
 
 end
