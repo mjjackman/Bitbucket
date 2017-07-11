@@ -12,12 +12,12 @@ Given(/^they are signed in$/) do
 end
 
 When(/^they are on the add traveller destination page$/) do
-  visit new_traveller_destination_path(@traveller)
+  visit edit_destination_traveller_path(@traveller)
 end
 
 When(/^they choose a destination$/) do
-  save_and_open_page
-  select @destination.name, :from => 'traveller_destination[id]'
+  # save_and_open_page
+  select @destination.name, :from => 'traveller[destination][id]'
   click_on 'Add'
 end
 
