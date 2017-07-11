@@ -16,10 +16,13 @@ When(/^they are on the add traveller destination page$/) do
 end
 
 When(/^they choose a destination$/) do
-  select @destination.name, :from => 'traveller[destination][id]'
+  # save_and_open_page
+  select @destination.name, :from => 'Destination'
   click_on 'Add'
 end
 
 Then(/^there is a destination in their bucket list$/) do
+  # binding.pry
+  @traveller.reload
   expect(@traveller.destinations.count).to eq 1
 end

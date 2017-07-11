@@ -7,17 +7,17 @@ class TravellersController < ApplicationController
 
   def edit_destination
     @traveller = current_traveller
-    @destination = @traveller.destinations.new
+    @traveller.traveller_destinations.build
   end
 
   def update_destination
     @traveller = current_traveller
-    @traveller.destinations.create(traveller_destination_params)
+    @traveller.update(traveller_destination_params)
   end
 
 
   private
   def traveller_destination_params
-      params.require(:traveller).permit(destination_attributes: [:id])
+      params.require(:traveller).permit(traveller_destinations_attributes: [:destination_id])
    end
 end
