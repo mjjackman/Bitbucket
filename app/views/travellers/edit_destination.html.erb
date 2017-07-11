@@ -1,0 +1,11 @@
+<%= form_for(@traveller, url: update_destination_traveller_path, action: "update_destination") do |f| %>
+  <fieldset>
+    <%= f.fields_for :destination do |builder| %>
+    <%= builder.label(:destination) %>
+    <%= builder.collection_select(:id, Destination.all, :id, :name) %>
+  </fieldset>
+  <% end %>
+  <fieldset>
+    <%= f.submit("Add") %>
+  </fieldset>
+  <% end %>
