@@ -51,6 +51,7 @@ end
 
 group :test do
   gem 'rack_session_access'
+  gem 'launchy'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
