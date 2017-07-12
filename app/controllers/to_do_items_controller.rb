@@ -17,6 +17,6 @@ class ToDoItemsController < ApplicationController
 
   private
   def to_do_item
-    params.require(:to_do_item).permit(:activity)
+    params.require(:to_do_item).permit(:activity, :location)
   end
 end

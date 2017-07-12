@@ -1,5 +1,7 @@
 <%= form_for @todo, url: {action: "create"} do |f| %>
 
+  <%= f.label :location %>
+  <%= f.text_field :location %>
 	<%= f.label :activity %>
 	<%= f.text_field :activity %>
 

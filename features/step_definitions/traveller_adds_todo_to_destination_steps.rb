@@ -1,4 +1,5 @@
 Given(/^a destination exists in the database$/) do
+
   @destination = Destination.create!(name: "Kenya")
 end
 
@@ -15,7 +16,20 @@ Given(/^they click add new todo item$/) do
 end
 
 When(/^they fill in todo form$/) do
+  Geocoder::Lookup::Test.add_stub(
+    "Nairobi, Kenya", [
+    {
+      'latitude'     => 19.0759837,
+      'longitude'    => 72.8776559,
+      'address'      => 'Mumbai, Maharashtra, India',
+      'state'        => 'Maharashtra',
+      'state_code'   => '',
+      'country'      => 'India'
+    }
+  ]
+)
   fill_in "Activity", :with => "Horse Riding"
+  fill_in "Location", :with => "Nairobi"
 end
 
 When(/^click submit$/) do
