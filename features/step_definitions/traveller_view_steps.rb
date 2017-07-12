@@ -26,6 +26,7 @@ Then(/^they are redirected to their personal view$/) do
 end
 
 Then(/^they see their destinations and to\-dos$/) do
+  save_and_open_page
   expect(page).to have_content("Walk on top of the Great Wall")
   expect(page).to have_content("China")
 end
