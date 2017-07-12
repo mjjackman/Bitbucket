@@ -3,7 +3,19 @@ Given(/^they have some destinations$/) do
 end
 
 Given(/^they have some to\-dos$/) do
-  @to_do_item = @destination.to_do_items.create!(:activity => "Walk on top of the Great Wall")
+  Geocoder::Lookup::Test.add_stub(
+    "Beijing, China", [
+      {
+        'latitude'     => 19.0759837,
+        'longitude'    => 72.8776559,
+        'address'      => 'Mumbai, Maharashtra, India',
+        'state'        => 'Maharashtra',
+        'state_code'   => '',
+        'country'      => 'India'
+      }
+    ]
+  )
+  @to_do_item = @destination.to_do_items.create!(:location => "Beijing", :activity => "Walk on top of the Great Wall")
 end
 
 Given(/^they are on the sign in page$/) do
@@ -11,7 +23,6 @@ Given(/^they are on the sign in page$/) do
 end
 
 When(/^they sign in$/) do
-  fill_in 'Name', :with => @traveller.name
   fill_in 'Email', :with => @traveller.email
   fill_in 'Password', :with => @traveller.password
   click_on 'Log in'

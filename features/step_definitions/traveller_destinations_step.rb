@@ -7,10 +7,6 @@ Given(/^they are registered$/) do
   @traveller = Traveller.create!(:name => "Jon McDonald", :email => 'jon@example.com', :password => 'password')
 end
 
-Given(/^they are signed in$/) do
-  page.set_rack_session({ "warden.user.traveller.key" => [[@traveller.id], "some stuff"] })
-end
-
 When(/^they are on the add traveller destination page$/) do
   visit edit_destination_traveller_path(@traveller)
 end

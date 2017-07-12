@@ -1,5 +1,6 @@
 class TravellersController < ApplicationController
-# before_action :authenticate_traveller!
+
+  before_action :authenticate_traveller!
 
   def show
     # binding.pry

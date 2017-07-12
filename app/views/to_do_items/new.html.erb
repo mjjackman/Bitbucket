@@ -1,0 +1,10 @@
+<%= form_for(@todo, url: destination_to_do_items_path, action: "create") do |f| %>
+
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+	<%= f.label :activity %>
+	<%= f.text_field :activity %>
+
+	<%= f.submit "Create" %> 
+
+<% end %>
