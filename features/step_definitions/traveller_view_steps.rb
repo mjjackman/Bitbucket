@@ -11,7 +11,6 @@ Given(/^they are on the sign in page$/) do
 end
 
 When(/^they sign in$/) do
-  fill_in 'Name', :with => @traveller.name
   fill_in 'Email', :with => @traveller.email
   fill_in 'Password', :with => @traveller.password
   click_on 'Log in'
