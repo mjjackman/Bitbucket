@@ -1,9 +1,9 @@
 Before do
-  Destination.create!(name: "Kenya")
+  @destination = Destination.create!(name: "Kenya")
 end
 
 Given(/^they are on the destination$/) do
-  visit destination_path
+  visit destination_path(@destination)
 end
 
 Given(/^they have a destination$/) do
@@ -12,17 +12,16 @@ end
 
 Given(/^they click add new todo item$/) do
   click_on "Add ToDoItem"
-  save_and_load_page
 end
 
 When(/^they fill in todo form$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  fill_in "Activity", :with => "Horse Riding"
 end
 
 When(/^click submit$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  click_on "Create"
 end
 
 Then(/^they have a todo item with the destination$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  @destination.to_do_items.count.should eq 1 
 end
