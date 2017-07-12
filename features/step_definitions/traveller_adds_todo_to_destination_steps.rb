@@ -1,4 +1,4 @@
-Before do
+Given(/^a destination exists in the database$/) do
   @destination = Destination.create!(name: "Kenya")
 end
 
@@ -7,7 +7,7 @@ Given(/^they are on the destination$/) do
 end
 
 Given(/^they have a destination$/) do
-  Destination.all.count.should eq 1
+  Destination.count.should eq 1
 end
 
 Given(/^they click add new todo item$/) do
