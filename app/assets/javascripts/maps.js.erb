@@ -4,6 +4,20 @@ function initMap() {
     zoom: 3
   });
 
+  var timer;
+
+  map.addListener('center_changed', function() {
+    var _map = this;
+    clearTimeout(timer);
+    timer = setTimeout(function() {
+      $.ajax({
+        url: '/destinations',
+        data: _map.getBounds().toJSON()
+      });
+    }, 250);
+
+  });
+
   var json = JSON.parse(document.getElementById('map').getAttribute('data-destinations'));
   for (var i = 0, length = json.length; i < length; i++) {
     var data = json[i];

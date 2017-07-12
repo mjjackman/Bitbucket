@@ -1,4 +1,12 @@
 <div id="map" data-destinations="<%= ToDoItem.all.to_json %>"></div>
 
+<div id="destinations" class="overlay">
+  <h3>Destinations</h3>
+
+  <div id="destination-list">
+    Loading...
+  </div>
+</div>
+
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvWisWSnQxBb9ijegWkr1op0bnchVhau0&callback=initMap">
 </script>
