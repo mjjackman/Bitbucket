@@ -1,4 +1,5 @@
-class ToDoItem < ActiveRecord::Base
-  belongs_to :destination
+class ToDoItem < ApplicationRecord
+
+  belongs_to :destination, optional: true
 
 end
