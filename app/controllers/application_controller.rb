@@ -4,4 +4,8 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
    traveller_path(@traveller) 
   end 
+
+  def current_traveller
+    Traveller.find(session["warden.user.traveller.key"][0][0])
+  end
 end

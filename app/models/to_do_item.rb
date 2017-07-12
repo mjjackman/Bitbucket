@@ -1,4 +1,4 @@
-class ToDoItem < ActiveRecord::Base
+class ToDoItem < ApplicationRecord
   belongs_to :destination
   geocoded_by :geocode_input
   validates :location, :presence => true

@@ -41,6 +41,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'pry-byebug'
   gem 'capybara'  
+  gem 'launchy'
 end
 
 group :development do
@@ -54,7 +55,7 @@ end
 
 group :test do
   gem 'rack_session_access'
-  gem 'launchy', '~> 2.4', '>= 2.4.3'
+  gem 'launchy'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -1,5 +1,5 @@
 Feature: Personalised traveller view
-  @wip
+  
   Scenario: A traveller logs in.
     Given they are registered
       And they have some destinations

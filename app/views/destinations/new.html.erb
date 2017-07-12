@@ -1,9 +1,0 @@
-<%= form_for(:traveller_destination, url: traveller_destinations_path(params[:traveller_id]), action: "create") do |f| %>
-  <fieldset>
-    <%= f.label(:destination) %>
-    <%= f.collection_select(:id, Destination.all, :id, :name) %>
-  </fieldset>
-  <fieldset>
-    <%= f.submit("Add") %>
-  </fieldset>
-  <% end %>

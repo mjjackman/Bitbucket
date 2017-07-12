@@ -227,7 +227,7 @@ DEPENDENCIES
   devise
   geocoder
   jbuilder (~> 2.5)
-  launchy (~> 2.4, >= 2.4.3)
+  launchy
   listen (>= 3.0.5, < 3.2)
   pg (~> 0.18)
   pry-byebug
