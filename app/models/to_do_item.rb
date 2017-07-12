@@ -1,5 +1,11 @@
 class ToDoItem < ApplicationRecord
+  belongs_to :destination
+  geocoded_by :geocode_input
+  validates :location, :presence => true
+  after_validation :geocode 
 
-  belongs_to :destination, optional: true
-
+  private
+  def geocode_input
+   "#{self.location}, #{self.destination.name}"
+  end
 end
