@@ -4,6 +4,12 @@ class ToDoItemsController < ApplicationController
     @todo = ToDoItem.new
   end
 
+  def index
+    @to_dos = ToDoItem.all
+
+    render :json => @to_dos
+  end
+
   def create
     @destination = Destination.find(params[:destination_id])
     @to_do = @destination.to_do_items.new(to_do_item)
