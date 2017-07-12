@@ -3,6 +3,7 @@ before_action :authenticate_traveller!
 
   def show
     @traveller = Traveller.find(params[:id])
+    @destinations = @traveller.destinations.all
     @traveller.destinations.new
   end
 

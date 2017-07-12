@@ -16,6 +16,7 @@ When(/^they are on the add traveller destination page$/) do
 end
 
 When(/^they choose a destination$/) do
+  # save_and_open_page
   select @destination.name, :from => 'Destination'
   click_on 'Add'
 end
