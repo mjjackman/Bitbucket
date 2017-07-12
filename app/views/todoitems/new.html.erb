@@ -1,0 +1,8 @@
+<%= form_for @todo, url: {action: "create"} do |f| %>
+
+	<%= f.label :activity %>
+	<%= f.text_field :activity %>
+
+	<%= f.submit "Create" %> 
+
+<% end %>
