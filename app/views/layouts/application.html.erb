@@ -38,11 +38,18 @@
           var infowindow = new google.maps.InfoWindow({
           });
 
+          // Creating the information and div to go on the Label Content
+          var contentString = 
+          '<div class="map_modal">' +
+          '<h2>' + data.activity + '</h2>' +
+          '<p>' + data.information + '</p>' +
+          '</div';
+
           // Creating a marker and putting it on the map
           var marker = new google.maps.Marker({
             position: latLng,
             map: map,
-            labelContent: data.activity
+            labelContent: contentString
           });
           //setting infowindow to open on click with info relating to relevant bound marker
           map.setCenter(marker.getPosition());
