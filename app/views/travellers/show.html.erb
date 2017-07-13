@@ -1,14 +1,13 @@
 <h1>My Bucket List!!</h1>
 <% @destinations.each do |destination| %>
-  <h2>
+<h2>
   <%= destination.name %>
 </h2>
-  <% destination.to_do_items.all.order(:priority).each do |item| %>
+  <% destination.to_do_items.order(:priority).each do |item| %>
   <ul>
     <li>
-    <%= item.activity %>(<%= item.priority %>)
+      <%= item.activity %>(<%= item.priority %>)
     </li>
   </ul>
   <% end %>
-
 <% end %>
