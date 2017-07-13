@@ -1,5 +1,4 @@
 class TravellersController < ApplicationController
-
   before_action :authenticate_traveller!
 
   def show
