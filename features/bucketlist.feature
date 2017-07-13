@@ -1,5 +1,4 @@
 Feature: Bucket List
-  @wip
   Scenario: A traveller sees all their bucketlist items ordered by priority
     Given they are registered
       And they are on the sign in page
