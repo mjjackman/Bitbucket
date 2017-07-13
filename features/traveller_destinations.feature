@@ -1,5 +1,4 @@
 Feature: Traveller Destinations
-
   Scenario: A traveller adds a destination
     Given there are some destinations
       And they are registered
