@@ -10,6 +10,7 @@ gem 'geocoder'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
+gem 'jquery-rails'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
@@ -40,7 +41,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'pry-byebug'
-  gem 'capybara'  
+  gem 'capybara'
   gem 'launchy'
 end
 
@@ -56,6 +57,7 @@ end
 group :test do
   gem 'rack_session_access'
   gem 'launchy'
+  gem 'poltergeist'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

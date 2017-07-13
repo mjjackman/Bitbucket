@@ -1,8 +1,9 @@
 class ToDoItem < ApplicationRecord
   belongs_to :destination
+  has_many :likes
   geocoded_by :geocode_input
   validates :location, :presence => true
-  after_validation :geocode 
+  after_validation :geocode
 
   private
   def geocode_input
