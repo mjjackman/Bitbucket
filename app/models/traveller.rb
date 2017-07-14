@@ -5,5 +5,6 @@ class Traveller < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :traveller_destinations
   has_many :destinations, through: :traveller_destinations
+  has_many :to_do_items, through: :destinations
   accepts_nested_attributes_for :traveller_destinations
 end

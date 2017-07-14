@@ -6,63 +6,11 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+    <div class="notice"><%= notice %></div>
+    <div class="alert"><%= alert %></div>
   </head>
 
   <body>
-    <h3>My Google Maps Demo</h3>
-    <style>
-      #map {
-        height: 100%;
-       }
-       html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-    <div id="map" data-destinations="<%= ToDoItem.all.to_json %>"></div>
-    <script>
-      function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: new google.maps.LatLng(0, 0),
-          zoom: 3
-        });
-
-        var json = JSON.parse(document.getElementById('map').getAttribute('data-destinations'));
-        for (var i = 0, length = json.length; i < length; i++) {
-          var data = json[i];
-          var latLng = new google.maps.LatLng(data.latitude, data.longitude);
-          // bounds  = new google.maps.LatLngBounds(); 
-          var infowindow = new google.maps.InfoWindow({
-          });
-
-          // Creating the information and div to go on the Label Content
-          var contentString = 
-          '<div class="map_modal">' +
-          '<h2>' + data.activity + '</h2>' +
-          '<p>' + data.information + '</p>' +
-          '</div';
-
-          // Creating a marker and putting it on the map
-          var marker = new google.maps.Marker({
-            position: latLng,
-            map: map,
-            labelContent: contentString
-          });
-          //setting infowindow to open on click with info relating to relevant bound marker
-          map.setCenter(marker.getPosition());
-          marker.addListener('click', function() {
-            infowindow.setContent(this.labelContent);
-            infowindow.open(map, this);
-            });
-          }
-        }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvWisWSnQxBb9ijegWkr1op0bnchVhau0&callback=initMap">
-    </script>
     <%= yield %>
   </body>
 </html>

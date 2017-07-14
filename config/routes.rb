@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # resources :destinations, :only => [:new, :create]
 
-  resources :destinations, :only => [:show] do
+  resources :destinations, :only => [:show, :index] do
     resources :to_do_items
   end
-  
+
   resources :travellers, :only => [:show] do
     member do
       get 'edit_destination'
