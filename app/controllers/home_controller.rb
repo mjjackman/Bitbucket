@@ -3,6 +3,7 @@ class HomeController < ApplicationController
 
   def index
     @destinations = current_traveller.destinations
+    @destination = Destination.new
   end
 
 end

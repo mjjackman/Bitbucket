@@ -1,0 +1,17 @@
+<%= form_for @destination do |f| %>
+  <div id="to-do-fields">
+    <%= f.fields_for :to_do_items do |t| %>
+      <div class="to-do-item">
+        <fieldset>
+          <%= t.label :location %>
+          <%= t.text_field :location %>
+        </fieldset>
+
+        <fieldset>
+          <%= t.label :activity %>
+          <%= t.text_field :activity %>
+        </fieldset>
+      </div>
+    <% end %>
+  </div>
+<% end %>

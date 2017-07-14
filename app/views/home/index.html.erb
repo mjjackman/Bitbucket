@@ -6,6 +6,19 @@
   <div id="destination-list">
     Loading...
   </div>
+
+  <%= form_for @destination, :remote => true do |f| %>
+    <fieldset>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </fieldset>
+
+    <div id="to-do-items">
+    </div>
+
+    <%= link_to 'Add To Do Item', fields_for_to_do_items_path, :remote => true %>
+    <%= f.submit "Save Destination" %>
+  <% end %>
 </div>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvWisWSnQxBb9ijegWkr1op0bnchVhau0&callback=initMap">

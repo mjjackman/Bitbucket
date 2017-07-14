@@ -10,6 +10,11 @@ class ToDoItemsController < ApplicationController
     render :json => @to_dos
   end
 
+  def fields_for
+    @destination = Destination.new
+    @destination.to_do_items.build
+  end
+
   def create
     @destination = Destination.find(params[:destination_id])
     @to_do = @destination.to_do_items.new(to_do_item)
