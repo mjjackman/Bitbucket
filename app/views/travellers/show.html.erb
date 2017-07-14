@@ -1,13 +1,20 @@
 <h1>My Bucket List!!</h1>
 <% @destinations.each do |destination| %>
-<h2>
-  <%= destination.name %>
-</h2>
-  <% destination.to_do_items.order(:priority).each do |item| %>
-  <ul>
-    <li>
-      <%= item.activity %>(<%= item.priority %>)
-    </li>
-  </ul>
-  <% end %>
+
+  <div class="destination">
+    <h2><%= destination.name %></h2>
+    <ul>
+      <% destination.to_do_items.order(:priority).each do |item| %>
+      <li class="to-do-item">
+        <h3>
+          <%= item.activity %>
+        </h3>
+
+        <%= link_to 'Like', likes_path(to_do_item_id: item, traveller_id: current_traveller), :method => :post, :remote => true %>
+
+        <span class="count"><%= item.likes.count %> Like<%= item.likes.count == 1 ? '' : 's' %></span>
+      </li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>

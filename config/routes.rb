@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :to_do_items
   end
 
+  resources :likes, :only => :create
+
   resources :travellers, :only => [:show] do
     member do
       get 'edit_destination'
