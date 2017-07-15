@@ -12,7 +12,7 @@ Feature: A traveller crowdsources destinations and todo items
       And they press 'Add To Do Item'
       And they fill in that todo item
       And they press 'Add To Do Item'
-      And they fill in that todo item
+      And they fill in that todo item again
       And they save the destination
     Then the destination is added with all the todo items without refreshing
 
