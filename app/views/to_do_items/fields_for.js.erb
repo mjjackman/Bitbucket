@@ -1,2 +1,1 @@
-var fields = $("<%= j(render :partial => "to_do_items/fields_for") %>").find('#to-do-fields').html();
-$('#to-do-items').append(fields);
+addToDoItemFields($("<%= j(render :partial => "to_do_items/fields_for") %>").find('#to-do-fields').html());
