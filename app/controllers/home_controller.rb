@@ -6,4 +6,6 @@ class HomeController < ApplicationController
     @destination = Destination.new
   end
 
+  
+
 end

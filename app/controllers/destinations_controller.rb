@@ -10,6 +10,12 @@ class DestinationsController < ApplicationController
   end
 
   def create
-
+    @dest = Destination.create!(destination_params)
+    @destinations = Destination.all
   end
+
+  private
+    def destination_params
+      params.require(:destination).permit(:name, :to_do_items_attributes => [:location, :activity])
+    end
 end
